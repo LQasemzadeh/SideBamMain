@@ -4,11 +4,37 @@ import Link from 'next/link'
 import React, { useState } from "react";
 import { useAuth } from '@/hooks/auth'
 import { FaHouseChimneyUser } from "react-icons/fa6";
-import { TbGridDots } from "react-icons/tb";
-import { IoCloseSharp } from "react-icons/io5";
+import BottomNavigation from 'reactjs-bottom-navigation'
+import { HiSearch } from "react-icons/hi";
+import { CgProfile } from "react-icons/cg";
+import { HiOutlineHome } from "react-icons/hi";
+import { RiMenuLine } from "react-icons/ri";
+import 'reactjs-bottom-navigation/lib/cjs/index.css'
 import './(auth)/Navbar.css';
 
-
+const bottomNavItems = [
+    {
+        title: 'Home',
+        icon: <HiOutlineHome style={{ fontSize: '18px' }} />,
+        activeIcon: <HiOutlineHome style={{ fontSize: '18px', color: '#9c2648' }} />
+    },
+    {
+        title: 'Search',
+        icon: <HiSearch style={{ fontSize: '18px' }} />,
+        activeIcon: <HiSearch style={{ fontSize: '18px', color: '#fff' }} />
+    },
+    {
+        title: 'Notifications',
+        icon: <CgProfile style={{ fontSize: '18px' }} />,
+        activeIcon: <CgProfile style={{ fontSize: '18px', color: '#fff' }} />
+    },
+    {
+        title: 'Menu',
+        icon: <RiMenuLine style={{ fontSize: '18px' }} />,
+        activeIcon: <RiMenuLine style={{ fontSize: '18px', color: '#fff' }} />,
+        onClick: () => alert('menu clicked')
+    }
+]
 
 
 const LoginLinks = () => {
@@ -16,7 +42,7 @@ const LoginLinks = () => {
 
     const [nav, setNav] = useState(false)
     const [navbar, setNavbar] = useState(false);
-    const handleClick = () => setNav(!nav)
+
 
     const changeBackground = () => {
         if(window.scrollY >=80) {
@@ -65,7 +91,7 @@ const LoginLinks = () => {
 
                     </div>
                 </div>
-                <div className="hidden md:flex pr-4">
+                <div className="md:flex pr-4">
                     <Link
                         href="/login"
                         className="px-5 py-1 text-white border-2 bg-[#152f4d] border-white
@@ -84,37 +110,16 @@ const LoginLinks = () => {
 
 
                 </div>
-                <div className="md:hidden"
-                     onClick={handleClick}
-                >
-                    {!nav ? <TbGridDots className="w-10 text-white"/> : <IoCloseSharp className="w-10 text-white"/>}
-                </div>
+
             </div>
             <div className={!nav ? "hidden" : "absolute bg-zinc-200 w-full px-8"}>
-                <Link
-                    href="#"
-                    className="p-4 border-b-2 border-zinc-300 w-full text-center"
-                >
-                    خانه
-                </Link>
-                <Link
-                    href="#"
-                    className="p-4 border-b-2 border-zinc-300 w-full text-center"
-                >
-                    آژانس‌ها
-                </Link>
-                <Link
-                    href="#"
-                    className="p-4 border-b-2 border-zinc-300 w-full text-center"
-                >
-                    مشاوره
-                </Link>
-                <Link
-                    href="#"
-                    className="p-4 border-b-2 border-zinc-300 w-full text-center"
-                >
-                    تماس باما
-                </Link>
+                <div>
+                    <BottomNavigation
+                        items={bottomNavItems}
+                        defaultSelected={0}
+                        onItemClick={(item) => console.log(item)}
+                    />
+                </div>
 
                 <div className="flex flex-col my-4">
                     <Link
@@ -136,7 +141,7 @@ const LoginLinks = () => {
             </div>
         </div>
 
-)
+    )
 }
 
 export default LoginLinks
