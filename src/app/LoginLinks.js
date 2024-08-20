@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link';
-import React, { useRef, useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { useAuth } from '@/hooks/auth';
 import { PiHouseLineBold } from "react-icons/pi";
 import { FaHouseUser } from "react-icons/fa6";

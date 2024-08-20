@@ -1,4 +1,5 @@
 import LoginLinks from "@/app/LoginLinks";
+import SearchForm from "@/app/SearchForm";
 
 
 export const metadata = {
@@ -24,6 +25,7 @@ const Home = () => {
                     </div>
                 </div>
             </div>
+            <SearchForm />
         </>
     )
 }
