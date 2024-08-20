@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 
-const SearchForm = () => {
+const SearchForm = ({ className }) => {
     const tabs = ['خرید', 'فروش', 'اجاره'];
     const [selectedTab, setSelectedTab] = useState(tabs[0]);
 
@@ -18,19 +18,20 @@ const SearchForm = () => {
     };
 
     return (
-        <div className="my-10">
-            <div className="flex justify-center mb-4">
+        <div className={`${className}`}>
+            <div className="flex space-x-1 justify-center mb-4">
                 {tabs.map(tab => (
                     <button
                         key={tab}
-                        className={`px-4 py-2 mx-2 md:mx-8 ${selectedTab === tab ? 'bg-blue-500 text-white' : ''}`}
+                        className={`px-4 py-2 mx-2 rounded-md md:mx-8 ${selectedTab === tab ? 'bg-blue-500 text-white' : 'bg-white text-black'}`}
                         onClick={() => setSelectedTab(tab)}
                     >
                         {tab}
                     </button>
                 ))}
             </div>
-            <div className="md:flex flex-row justify-around mt-4 bg-white w-full md:w-3/4 mx-auto p-4 rounded-xl shadow-lg">
+            <div
+                className="md:flex flex-row justify-around mt-4 bg-white w-full md:w-3/4 mx-auto p-4 rounded-xl shadow-lg">
                 <form onSubmit={handleFormSubmit} className="flex flex-col md:flex-row justify-around w-full">
                     <input
                         type="text"
