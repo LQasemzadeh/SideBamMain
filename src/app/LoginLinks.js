@@ -81,12 +81,15 @@ const LoginLinks = () => {
                                 باما</Link>
                         </div>
                     </div>
-                    <div className="md:flex pr-4">
+                    <div className="flex pr-4">
                         <Link href="/login"
-                              className="px-5 py-1 text-white border-2 bg-blue-500 border-white hover:bg-white hover:text-blue-500 hover:border-blue-500 rounded-full">ورود</Link>
+                            className="px-5 py-1 text-white border-2 bg-blue-500 border-white hover:bg-white hover:text-blue-500 hover:border-blue-500 rounded-full">
+                            ورود
+                        </Link>
                         <Link href="/register"
-                              className="px-5 py-1 text-white border-2 bg-transparent border-white hover:text-blue-500 hover:border-blue-500 rounded-full">ثبت
-                            نام</Link>
+                              className="px-5 py-1 text-white border-2 bg-transparent border-white hover:text-blue-500 hover:border-blue-500 rounded-full">
+                            ثبت‌نام
+                            </Link>
                     </div>
                 </div>
             </div>
