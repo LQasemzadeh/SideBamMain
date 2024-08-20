@@ -1,5 +1,6 @@
 import LoginLinks from "@/app/LoginLinks";
 import SearchForm from "@/app/SearchForm";
+import Featured from "@/app/Featured";
 
 
 export const metadata = {
@@ -28,6 +29,9 @@ const Home = () => {
             </div>
             <div className="flex justify-center transform -translate-y-4 sm:-translate-y-10 md:-translate-y-20">
                 <SearchForm/>
+            </div>
+            <div>
+                <Featured />
             </div>
         </>
     )
