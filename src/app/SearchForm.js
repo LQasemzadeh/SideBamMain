@@ -35,28 +35,28 @@ const SearchForm = () => {
                     <input
                         type="text"
                         placeholder="نوع ملک"
-                        className="my-2 md:mx-2 w-full rounded-xl border-2 p-2"
+                        className="my-2 md:mx-2 w-full rounded-xl bg-gray-100 p-2"
                         value={propertyType}
                         onChange={(e) => setPropertyType(e.target.value)}
                     />
                     <input
                         type="text"
                         placeholder="قیمت"
-                        className="my-2 md:mx-2 w-full rounded-xl border-2 p-2"
+                        className="my-2 md:mx-2 w-full rounded-xl bg-gray-100 p-2"
                         value={price}
                         onChange={(e) => setPrice(e.target.value)}
                     />
                     <input
                         type="text"
                         placeholder="موقعیت"
-                        className="my-2 md:mx-2 w-full rounded-xl border-2 p-2"
+                        className="my-2 md:mx-2 w-full rounded-xl bg-gray-100 p-2"
                         value={location}
                         onChange={(e) => setLocation(e.target.value)}
                     />
                     <input
                         type="text"
                         placeholder="متراژ"
-                        className="my-2 md:mx-2 w-full rounded-xl border-2 p-2"
+                        className="my-2 md:mx-2 w-full rounded-xl bg-gray-100 p-2"
                         value={area}
                         onChange={(e) => setArea(e.target.value)}
                     />
