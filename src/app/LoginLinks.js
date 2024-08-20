@@ -5,36 +5,36 @@ import React, { useRef, useState, useEffect } from "react";
 import { useAuth } from '@/hooks/auth';
 import { PiHouseLineBold } from "react-icons/pi";
 import { FaHouseUser } from "react-icons/fa6";
-import BottomNavigation from 'reactjs-bottom-navigation';
 import { HiSearch } from "react-icons/hi";
 import { CgProfile } from "react-icons/cg";
 import { RiMenuLine } from "react-icons/ri";
-import 'reactjs-bottom-navigation/lib/cjs/index.css';
-import './(auth)/Navbar.css';
+import './Navbar.css';
+
 
 const bottomNavItems = [
     {
-        title: 'Home',
+        title: 'خانه',
         icon: <PiHouseLineBold style={{ fontSize: '18px' }} />,
         activeIcon: <PiHouseLineBold style={{ fontSize: '18px', color: '#9c2648' }} />,
         link: '/', // Link for Home
     },
     {
-        title: 'Search',
+        title: 'جستجو',
         icon: <HiSearch style={{ fontSize: '18px' }} />,
         activeIcon: <HiSearch style={{ fontSize: '18px', color: '#fff' }} />,
         link: '/search', // Link for Search
     },
     {
-        title: 'Notifications',
+        title: 'پروفایل',
         icon: <CgProfile style={{ fontSize: '18px' }} />,
         activeIcon: <CgProfile style={{ fontSize: '18px', color: '#fff' }} />,
         link: '/notifications', // Link for Notifications
     },
     {
-        title: 'Menu',
+        title: 'دسته‌ها',
         icon: <RiMenuLine style={{ fontSize: '18px' }} />,
         activeIcon: <RiMenuLine style={{ fontSize: '18px', color: '#fff' }} />,
+        link: '#', // Placeholder link for Menu
         onClick: () => alert('Menu clicked'), // Add your own menu handling
     }
 ]
@@ -92,6 +92,21 @@ const LoginLinks = () => {
             </div>
 
             {/* Bottom Navigation */}
+            <div className="fixed bottom-0 left-0 right-0 bg-white shadow-md md:hidden">
+                <nav className="flex justify-around p-4 border-t">
+                    {bottomNavItems.map((item, index) => (
+                        <Link key={index} href={item.link} onClick={item.onClick || (() => setActiveNavIndex(index))}>
+                            <div className="flex flex-col items-center">
+                                {activeNavIndex === index ? item.activeIcon : item.icon}
+                                <span
+                                    className={`text-xs ${activeNavIndex === index ? 'text-blue-500' : 'text-gray-500'}`}>
+                                    {item.title}
+                                </span>
+                            </div>
+                        </Link>
+                    ))}
+                </nav>
+            </div>
 
         </div>
 
