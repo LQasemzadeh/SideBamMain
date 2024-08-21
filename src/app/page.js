@@ -1,6 +1,6 @@
 import LoginLinks from "@/app/LoginLinks";
 import SearchForm from "@/app/SearchForm";
-import Featured from "@/app/Featured";
+import Services from "@/app/Services";
 
 
 
@@ -32,7 +32,7 @@ const Home = () => {
                 <SearchForm/>
             </div>
             <div>
-                <Featured />
+                <Services />
             </div>
         </>
     )

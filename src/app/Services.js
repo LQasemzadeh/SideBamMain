@@ -10,7 +10,7 @@ import Aos from "aos";
 import "aos/dist/aos.css";
 
 
-const Featured = () => {
+const Services = () => {
 
     useEffect(() => {
         Aos.init({
@@ -22,20 +22,20 @@ const Featured = () => {
 
     const data = [
         {
-            img: '/assets/Featured/012-1170x785.jpg',
-            name: "آپارتمان دو خوابه",
+            img: '/assets/Services/012-1170x785.jpg',
+            name: "خرید",
         },
         {
-            img: '/assets/Featured/030-1170x785.jpg',
-            name: "منزل ویلایی",
+            img: '/assets/Services/030-1170x785.jpg',
+            name: "اجاره",
         },
         {
-            img: '/assets/Featured/038-1170x785.jpg',
-            name: "آپارتمان یک خوابه",
+            img: '/assets/Services/038-1170x785.jpg',
+            name: "فروش",
         },
         {
-            img: '/assets/Featured/040-1170x785.jpg',
-            name: "آپارتمان مستردار",
+            img: '/assets/Services/040-1170x785.jpg',
+            name: "رهن",
         },
     ];
 
@@ -77,16 +77,17 @@ const Featured = () => {
     };
 
     return (
-        <div className="bg-white py-20 sm:py-20">
-            <div className="mx-auto max-w-7xl px-6 lg:px-8">
-                <div className="mx-auto max-w-2xl lg:mx-0">
-                    <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">لیست برگزیده‌ها</h2>
-                    <p className="mt-6 text-lg leading-8 text-gray-600">
-                        لیست برگزیده‌ها بر اساس موقعیت مکانی شما و فعالیت جستجوی شما،
-                        از جمله خانه‌هایی که مشاهده و ذخیره کرده‌اید و فیلترهایی که استفاده کرده‌اید، می‌باشد.
+        <div className="bg-white flex flex-col justify-center lg:px-32 px-5 py-16">
+            <div className="flex flex-col items-center lg:flex-row justify-between mb-10 lg:mb-0">
+                <div data-aos="fade-down">
+                    <h1 className="text-3xl font-semibold text-center lg:text-start">
+                        خدمات
+                    </h1>
+                    <p className="mt-2 text-center lg:text-start">
+                        زمینه های فعالیت شرکت
                     </p>
                 </div>
-                <div className="flex gap-5 mt-4 lg:mt-4">
+                <div className="flex gap-5 mt-4 lg:mt-0">
                     <button
                         data-aos="fade-down"
                         className=" bg-orange-400 text-backgroundColor px-4 py-2 rounded-lg active:bg-orange-500"
@@ -102,31 +103,31 @@ const Featured = () => {
                         <FaArrowLeft size={12}/>
                     </button>
                 </div>
-                <div data-aos="fade-up" className="mt-5">
-                    <Slider ref={slider} {...settings}>
-                        {data.map((e, index) => (
-                            <div
-                                className="h-[300px] text-black rounded-xl shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px] mb-2 mt-2 cursor-pointer"
-                                key={index}
-                            >
-                                <div>
-                                    <img
-                                        src={e.img}
-                                        alt="img"
-                                        className=" h-56 rounded-t-xl w-full"
-                                    />
-                                </div>
-
-                                <div className=" flex flex-col justify-center items-center">
-                                    <h1 className=" font-semibold text-lg pt-4">{e.name}</h1>
-                                </div>
+            </div>
+            <div data-aos="fade-up" className="mt-5">
+                <Slider ref={slider} {...settings}>
+                    {data.map((e, index) => (
+                        <div
+                            className="h-[300px] text-black rounded-xl shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px] mb-2 mt-2 cursor-pointer"
+                            key={index}
+                        >
+                            <div>
+                                <img
+                                    src={e.img}
+                                    alt="img"
+                                    className=" h-56 rounded-t-xl w-full"
+                                />
                             </div>
-                        ))}
-                    </Slider>
-                </div>
+
+                            <div className=" flex flex-col justify-center items-center">
+                                <h1 className=" font-semibold text-lg pt-4">{e.name}</h1>
+                            </div>
+                        </div>
+                    ))}
+                </Slider>
             </div>
         </div>
     );
 };
 
-export default Featured;
+export default Services;
