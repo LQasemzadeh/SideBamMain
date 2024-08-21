@@ -3,6 +3,7 @@ import SearchForm from "@/app/SearchForm";
 import Featured from "@/app/Featured";
 
 
+
 export const metadata = {
     title: 'SideBam',
 }
