@@ -8,3 +8,6 @@
 body {
     font-family: 'Vazirmatn', sans-serif;
 }
+.slick-slide {
+    padding: 10px;
+}
